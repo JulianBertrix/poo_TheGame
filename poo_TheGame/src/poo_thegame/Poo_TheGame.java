@@ -31,7 +31,7 @@ public class Poo_TheGame {
         game.addCombattant(new Orc("yannick"));
         game.addCombattant(new Elfe("jonathan"));
         game.addCombattant(new Elfe("severine"));
-        game.addCombattant(new Orc("damien"));
+        game.addCombattant(new Orc("dorian"));
         game.addCombattant(new Orc("alexandre"));
         game.addCombattant(new Orc("julian"));
         game.addCombattant(new Orc("françois"));
