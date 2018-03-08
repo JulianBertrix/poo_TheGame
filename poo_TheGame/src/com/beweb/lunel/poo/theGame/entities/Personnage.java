@@ -27,38 +27,38 @@ public abstract class Personnage {
         this.nom = n;
     }
     
-    public void initAttribut()
-    {
-        
-    }
+    abstract public void initAttribut();
     
     public void attaquer(Personnage cible)
     {      
         int degat = this.force - cible.endurance;
+        boolean bloque = false;
         
         if (degat < 0)
         {
             degat *= -1;
         }
         
-        double coupCritique = Math.random();
-        if(coupCritique <= 0.25)
+        double parer = Math.random();
+        if(parer <= 0.25)
         {
-            degat *= 2;
-            cible.pv -= degat;
-            System.out.println(this.nom + " inflige un coup critique de " + degat + " points de degat a " + cible.nom + " il reste " + cible.pv + " a " + cible.nom);
+            bloque = true;
+            degat = 0;
+            System.out.println(cible.nom + " a parer le coup de " + this.nom);
         }
         else
         {
+            bloque = false;
             cible.pv -= degat;
             System.out.println(this.nom + " attaque et inflige " + degat + " points de degat a " + cible.nom + " il reste " + cible.pv + " a " + cible.nom);
         }
         
-        double parer = Math.random();
-        if(parer <= 0.25)
+        double coupCritique = Math.random();
+        if(coupCritique <= 0.25 && !bloque)
         {
-            degat = 0;
-            System.out.println(cible.nom + " a parer le coup de " + this.nom);
+            degat *= 2;
+            cible.pv -= degat;
+            System.out.println(this.nom + " inflige un coup critique de " + degat + " points de degat a " + cible.nom + " il reste " + cible.pv + " a " + cible.nom);
         }
         else
         {
