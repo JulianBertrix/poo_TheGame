@@ -29,34 +29,34 @@ public class Poo_TheGame {
         if (race1 <= 0.33)
         {
             domeDuTonnere[0] = new Humain("loic");
-            System.out.println("loic est un humain");
+            System.out.println("loic est un humain qui a " + domeDuTonnere[0].pv + " de pv");
         }
         else if(race1 > 0.33 && race1 <= 0.66)
         {
             domeDuTonnere[0] = new Orc("loic");
-            System.out.println("loic est un orc");
+            System.out.println("loic est un orc qui a " + domeDuTonnere[0].pv + " de pv");
         }
         else
         {
             domeDuTonnere[0] = new Elfe("loic");
-            System.out.println("loic est un elfe");
+            System.out.println("loic est un elfe qui a " + domeDuTonnere[0].pv + " de pv");
         }
         
         double race2 = Math.random();
         if (race2 <= 0.33)
         {
             domeDuTonnere[1] = new Humain("jonathan");
-            System.out.println("jonathan est un humain");
+            System.out.println("jonathan est un humain qui a " + domeDuTonnere[1].pv + " de pv");
         }
         else if(race2 > 0.33 && race2 <= 0.66)
         {
             domeDuTonnere[1] = new Orc("jonathan");
-            System.out.println("jonathan est un Orc");
+            System.out.println("jonathan est un Orc qui a " + domeDuTonnere[1].pv + " de pv");
         }
         else
         {
             domeDuTonnere[1] = new Elfe("jonathan");
-            System.out.println("jonathan est un elfe");
+            System.out.println("jonathan est un elfe qui a " + domeDuTonnere[1].pv + " de pv");
         }
         
         int fin = 1000;

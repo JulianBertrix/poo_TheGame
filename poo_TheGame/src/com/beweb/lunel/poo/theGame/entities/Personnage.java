@@ -9,7 +9,7 @@ package com.beweb.lunel.poo.theGame.entities;
  *
  * @author julianbertrix
  */
-public class Personnage {
+public abstract class Personnage {
     
     public int force, pv, endurance;
     public String nom;
@@ -33,7 +33,7 @@ public class Personnage {
     }
     
     public void attaquer(Personnage cible)
-    {
+    {      
         int degat = this.force - cible.endurance;
         
         if (degat < 0)
@@ -41,15 +41,34 @@ public class Personnage {
             degat *= -1;
         }
         
-        cible.pv -= degat;
-        
-        if(cible.pv <= 0)
+        double coupCritique = Math.random();
+        if(coupCritique <= 0.25)
         {
-            System.out.println(cible.nom + " est mort...MWAHAHAHAHAHA!");
+            degat *= 2;
+            cible.pv -= degat;
+            System.out.println(this.nom + " inflige un coup critique de " + degat + " points de degat a " + cible.nom + " il reste " + cible.pv + " a " + cible.nom);
         }
         else
         {
-            System.out.println(this.nom + " attaque " + cible.nom + " il reste " + cible.pv + " a " + cible.nom);
+            cible.pv -= degat;
+            System.out.println(this.nom + " attaque et inflige " + degat + " points de degat a " + cible.nom + " il reste " + cible.pv + " a " + cible.nom);
+        }
+        
+        double parer = Math.random();
+        if(parer <= 0.25)
+        {
+            degat = 0;
+            System.out.println(cible.nom + " a parer le coup de " + this.nom);
+        }
+        else
+        {
+            cible.pv -= degat;
+            System.out.println(this.nom + " attaque et inflige " + degat + " points de degat a " + cible.nom + " il reste " + cible.pv + " a " + cible.nom);
+        }
+           
+        if(cible.pv <= 0)
+        {
+            System.out.println(cible.nom + " est mort...MWAHAHAHAHAHA!");
         }
     }
 }
