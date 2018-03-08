@@ -25,6 +25,4 @@ public class Elfe extends Personnage{
         this.force = 80;
         this.endurance = 180;
     }
-    
-    
 }

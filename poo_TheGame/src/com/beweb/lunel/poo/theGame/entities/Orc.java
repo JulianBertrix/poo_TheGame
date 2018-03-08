@@ -24,7 +24,7 @@ public class Orc extends Personnage{
     public void initAttribut() {
         this.pv = 650;
         this.force = 150;
-        this.endurance = 120;
+        this.endurance = 90;
     }
     
 }
